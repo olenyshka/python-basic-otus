@@ -26,10 +26,15 @@ PRIME = "prime"
 
 
 def is_prime(x):
+    k = 0
     for i in range(2, (x//2)+1):
         if x % i == 0:
-            return False
+            k = k + 1
+    if ((k == 0) and (x >=2 )):
         return True
+    else:
+        return False
+
 
 
 
@@ -47,15 +52,19 @@ def filter_numbers(numbers, doparg):
     """
     if doparg == ODD:
         odds = list(filter(lambda x: x % 2 != 0, numbers))
+        #print(odds)
         return odds
         #[number for number in numbers if number % 2 != 0]
 
     elif doparg == EVEN:
         evens = list(filter(lambda x: x % 2 == 0, numbers))
+        #print(evens)
         return evens
         #[number for number in numbers if number % 2 == 0]
 
     elif doparg == PRIME:
         prim = list(filter(is_prime, numbers))
+        #print(prim)
+        return prim
 
 

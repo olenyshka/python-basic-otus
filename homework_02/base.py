@@ -27,7 +27,7 @@ class Vehicle(ABC):
                 started = True
                 return started
             else:
-                raise LowFuelError
+                raise LowFuelError('не started')
 
 
     def move(self, dist):
@@ -35,7 +35,7 @@ class Vehicle(ABC):
             self.fuel = self.fuel - self.dist * self.fuel_consumption
             return self.fuel
         else:
-            raise NotEnoughFuel
+            raise NotEnoughFuel('недостаточно топлива')
 
 
 

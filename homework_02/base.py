@@ -1,20 +1,7 @@
 from abc import ABC
 
 
-from homework.homework_02.exceptions import LowFuelError, NotEnoughFuel
-
-
-# from homework.homework_02.exceptions import LowFuelError, NotEnoughFuel
-# class LowFuelError(Exception):
-#     pass
-#
-#
-# class NotEnoughFuel(Exception):
-#     pass
-#
-#
-# class CargoOverload(Exception):
-#     pass
+from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
 class Vehicle(ABC):
@@ -42,13 +29,6 @@ class Vehicle(ABC):
             else:
                 raise LowFuelError
 
-            # try:
-            #     self.fuel > 0
-            # except LowFuelError:
-            #     print("Низкий уровень топлива")
-            # else:
-            #     started = True
-            #     return started
 
     def move(self, dist):
         if (self.fuel - self.dist * self.fuel_consumption) >= 0:
@@ -56,14 +36,6 @@ class Vehicle(ABC):
             return self.fuel
         else:
             raise NotEnoughFuel
-
-        # try:
-        #     (self.fuel - self.dist * self.fuel_consumption) >= 0
-        # except exceptions.NotEnoughFuel:
-        #     print("Недостаточно топлива")
-        # else:
-        #     self.fuel = self.fuel - self.dist * self.fuel_consumption
-        #     return self.fuel
 
 
 
@@ -77,19 +49,3 @@ class Vehicle(ABC):
 # и изменяет количество оставшегося топлива, иначе выкидывает исключение exceptions.NotEnoughFuel
 
 
-# fuel_consumption  потребление топлива
-# fuel          топливо
-# Low Fuel Error        Ошибка низкого уровня топлива
-
-
-# vic = Vehicle(started=True, weight=15, fuel=25, fuel_consumption=0.14, dist=50)
-# #
-# # vic.fuel = 25
-# # vic.fuel_consumption = 0.14       # если считаем расход на 1 км
-# # vic.started = True
-# # dist = 50
-# #
-# # print(move(dist))
-#
-# # vic.move(vic.dist)
-# print(vic.move(vic.dist))

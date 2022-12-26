@@ -7,18 +7,30 @@ from homework_02.exceptions import CargoOverload
 
 class Plane(Vehicle):
 
-    def __init__(self, cargo, max_cargo):
+    def __init__(self, cargo, max_cargo, weight, fuel, fuel_consumption, started, dist):
         self.cargo = cargo
         self.max_cargo = max_cargo
+        self.weight = weight
+        self.fuel = fuel
+        self.fuel_consumption = fuel_consumption
+        self.started = started
+        self.dist = dist
+
+
 
     def load_cargo(self, dop_cargo: int):
-        try:
-            dop_cargo + self.cargo <= self.max_cargo
-        except CargoOverload:
-            print("перегруз")
-        else:
+        # try:
+        #     dop_cargo + self.cargo <= self.max_cargo
+        # except CargoOverload:
+        #     print("перегруз")
+        # else:
+        #     self.cargo = dop_cargo + self.cargo
+        #     return self.cargo
+        if dop_cargo + self.cargo <= self.max_cargo:
             self.cargo = dop_cargo + self.cargo
             return self.cargo
+        else:
+            raise CargoOverload('перегруз')
 
     def remove_all_cargo(self):
         c = self.cargo

@@ -11,7 +11,7 @@ class Vehicle(ABC):
     # fuel_consumption = None
     # new_fuel = None
 
-    def __init__(self, started=None, weight=None, fuel=None, fuel_consumption=None, dist=None):
+    def __init__(self, started=True, weight=3, fuel=30, fuel_consumption=2, dist=10):
         self.weight = weight
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption

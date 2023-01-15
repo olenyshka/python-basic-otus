@@ -7,8 +7,10 @@ from homework_02.engine import Engine
 
 class Car(Vehicle):
 
-    # def __init__(self, engine=None):
-    #     self.engine = engine
+    def __init__(self, weight, fuel, fuel_consumption):        #, dist=10):
+        self.weight = weight
+        self.fuel = fuel
+        self.fuel_consumption = fuel_consumption
 
     def set_engine(self, engine):
         self.engine = engine

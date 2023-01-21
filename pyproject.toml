@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "homeworks"
+version = "0.1.0"
+description = ""
+authors = ["Olena <eyasya@rambler.ru>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+homeworks = "^0.85.0"
+uvicorn = {extras = ["standart"], version = "^0.20.0"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

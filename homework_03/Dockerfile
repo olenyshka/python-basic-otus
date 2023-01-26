@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /varapp
 
 RUN pip install --upgrade pip
-RUN pip install poetry==1.2.2
+# RUN pip install poetry==1.2.2
 
 #RUN pip install --ignore-installed uvicorn==0.20.0
 # RUN poetry config virtualenvs.create false --local
